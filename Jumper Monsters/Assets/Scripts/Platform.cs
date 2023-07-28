@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] float jumpSpeed = 20f;
+    [SerializeField] float jumpSpeed = 15f;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -15,9 +15,13 @@ public class Platform : MonoBehaviour
             if (playerRb2d != null)
             {
                 playerRb2d.velocity = new Vector2(playerRb2d.velocity.x, jumpSpeed);
+                //Destroy(gameObject, 1f);
             }
         }
 
+    }
+    private void FixedUpdate() {
+        //Destroy(gameObject, 5f);
     }
 
 }
